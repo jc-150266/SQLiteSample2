@@ -56,6 +56,7 @@ namespace SQLiteSample
                     _db.SaveItem(item);
                     listView.ItemsSource = _db.GetItems(); //リスト更新
                     entry.Text = ""; // 入力コントロールをクリアする
+                    Navigation.PushAsync(new SubPage());
                 }
             };
 
