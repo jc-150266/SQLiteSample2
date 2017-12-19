@@ -23,9 +23,25 @@ namespace SQLiteSample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            //LoadApplication(new App());
+
+            var dbPath = GetLocalFilePath("culculate.db3");
+
+            LoadApplication(new App(dbPath));
 
             return base.FinishedLaunching(app, options);
+        }
+        public static string GetLocalFilePath(string filename)
+        {
+            //指定されたファイルのパスを取得する。なければ作成してそのパスを返却する。
+            var docFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var libFolder = System.IO.Path.Combine(docFolder, "..", "Library", "Databases");
+
+            if (!System.IO.Directory.Exists(libFolder))
+            {
+                System.IO.Directory.CreateDirectory(libFolder);
+            }
+
+            return System.IO.Path.Combine(libFolder, filename);
         }
     }
 }
