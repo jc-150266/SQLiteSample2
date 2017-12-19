@@ -19,7 +19,6 @@ namespace SQLiteSample
 
         readonly TodoRepository _db = new TodoRepository(); // <-1
         static readonly object Locker = new object();
-        private Entry entry;
 
         private ObservableCollection<TodoRepository> ar;
 
