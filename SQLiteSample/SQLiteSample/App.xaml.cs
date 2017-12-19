@@ -36,5 +36,6 @@ namespace SQLiteSample
         {
             // Handle when your app resumes
         }
+
     }
 }

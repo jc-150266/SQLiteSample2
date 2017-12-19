@@ -7,9 +7,10 @@ using SQLite.Net.Attributes;
 
 namespace SQLiteSample
 {
+    [Table("User")]
     public class TodoItem
     {
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement, Column("_id")]
         public int Id { get; set; }             // <-1
         public string Text { get; set; }        // <-2
         public DateTime CreatedAt { get; set; } // <-3

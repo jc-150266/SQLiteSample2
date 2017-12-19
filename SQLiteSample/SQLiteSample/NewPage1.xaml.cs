@@ -24,8 +24,16 @@ namespace SQLiteSample
 
         public NewPage1()
         {
-
             var listView = new ListView
+            {
+                //ItemsSource = UserModel.selectUser(),
+                //ItemTemplate = new DataTemplate(typeof(TextCell))
+                ItemsSource = ar,
+                ItemTemplate = new DataTemplate(() => new MyCell(this)),
+
+            };
+
+            /*var listView = new ListView
             { // <-2
                 ItemsSource = _db.GetItems(), // <-3
                 ItemTemplate = new DataTemplate(typeof(TextCell)) // <-4

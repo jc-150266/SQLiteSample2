@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SQLite.Net;
+using SQLiteSample;
 using Xamarin.Forms;
 
 namespace SQLiteSample
@@ -18,6 +19,7 @@ namespace SQLiteSample
         {
             _db = DependencyService.Get<ISQLite>().GetConnection(); // <-3
             _db.CreateTable<TodoItem>(); // <-4
+
         }
 
         public IEnumerable<TodoItem> GetItems()

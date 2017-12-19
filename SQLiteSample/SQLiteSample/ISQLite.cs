@@ -1,4 +1,6 @@
 ﻿using SQLite.Net;
+using System;
+using System.IO;
 
 namespace SQLiteSample
 {
